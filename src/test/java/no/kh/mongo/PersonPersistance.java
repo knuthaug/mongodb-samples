@@ -24,7 +24,7 @@ public class PersonPersistance {
 
        testDb = m.getDB( "test" );
        persons = testDb.getCollection("persons");
-       //persons.setObjectClass(Person.class);
+       persons.setObjectClass(Person.class);
     }
 
     @Test
@@ -33,6 +33,7 @@ public class PersonPersistance {
         Person test = new Person("Knut Haugen");
         persons.insert(test);         
         assertNotNull(test.get("_id"));
+        persons.remove(new BasicDBObject("name", "Knut Haugen"));
 
     }
 
@@ -41,13 +42,13 @@ public class PersonPersistance {
         Person test = new Person("Knut Haugen");
         persons.insert(test);
 
-        BasicDBObject test2 = (BasicDBObject) persons.findOne(new BasicDBObject("name", "Knut Haugen"));
-        assertEquals(test.get("_id"), test2.get("_id"));
+        Person test2 = (Person) persons.findOne();
+        assertEquals(test.get("name"), test2.get("name"));
     }
 
     @After
     public void tearDown(){
-        persons.drop();
+        //persons.drop();
     }
 
 }
