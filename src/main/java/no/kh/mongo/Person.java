@@ -1,4 +1,13 @@
 package no.kh.mongo;
 
-public class Person {
+import com.mongodb.BasicDBObject;
+
+
+public class Person extends BasicDBObject {
+
+    public Person(String fullName) {
+        put("name", fullName);
+    }
+
+    
 }
