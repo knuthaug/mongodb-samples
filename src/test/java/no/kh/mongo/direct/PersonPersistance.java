@@ -1,9 +1,10 @@
-package no.kh.mongo;
+package no.kh.mongo.direct;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
+import no.kh.mongo.direct.Person;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

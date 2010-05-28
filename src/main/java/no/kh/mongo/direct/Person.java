@@ -1,4 +1,4 @@
-package no.kh.mongo;
+package no.kh.mongo.direct;
 
 import com.mongodb.DBObject;
 
