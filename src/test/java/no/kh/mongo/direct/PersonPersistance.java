@@ -1,10 +1,8 @@
 package no.kh.mongo.direct;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
-import no.kh.mongo.direct.Person;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,9 +30,9 @@ public class PersonPersistance {
     public void insertPersonSavesPersonToDatabase () {
 
         Person test = new Person("Knut Haugen");
-        persons.insert(test);         
+        persons.insert(test);
         assertNotNull(test.get("_id"));
-        persons.remove(new BasicDBObject("name", "Knut Haugen"));
+
 
     }
 
@@ -49,7 +47,7 @@ public class PersonPersistance {
 
     @After
     public void tearDown(){
-        //persons.drop();
+        persons.drop();
     }
 
 }

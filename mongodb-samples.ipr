@@ -478,6 +478,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/1.4/mongo-java-driver-1.4-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.google.code:morphia:0.93-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/morphia/0.93-SNAPSHOT/morphia-0.93-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/morphia/0.93-SNAPSHOT/morphia-0.93-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/morphia/0.93-SNAPSHOT/morphia-0.93-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
