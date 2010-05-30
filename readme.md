@@ -4,7 +4,7 @@ Primarily used in the talk nosql-dba-talk
 
 Switch branches to access the sample code for the different languages. 
 
-* rava
+* java
 * ruby
 
 
