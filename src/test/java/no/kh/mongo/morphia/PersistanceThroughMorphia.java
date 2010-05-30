@@ -12,6 +12,7 @@ import org.junit.Test;
 import java.net.UnknownHostException;
 
 import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertNull;
 
 public class PersistanceThroughMorphia {
 
@@ -35,16 +36,27 @@ public class PersistanceThroughMorphia {
         test.setName("Knut Haugen");
         test.setStreetName("Josefines gate");
         persons.save(morph.toDBObject(test));
-        Person test2 = (Person) morph.fromDBObject(Person.class, persons.findOne());
+        Person test2 = morph.fromDBObject(Person.class, persons.findOne());
         assertNotNull(test2.getId());
 
     }
 
+
+    @Test
+    public void personMissingField () {
+
+        Person test = new Person();
+        test.setStreetName("Josefines gate");
+        persons.save(morph.toDBObject(test));
+        Person test2 = morph.fromDBObject(Person.class, persons.findOne());
+        assertNull(test2.getName());
+
+    }
     
 
     @After
     public void tearDown(){
-        //persons.drop();
+        persons.drop();
     }
 
 
