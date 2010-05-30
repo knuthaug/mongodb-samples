@@ -1,12 +1,8 @@
-Mongodb sample code for several languages. 
+Mongodb sample code in ruby. 
 
 Primarily used in the talk nosql-dba-talk
 
-Switch branches to access the sample code for the different languages. 
-
-* java
-* ruby
-
+Two different versions so far, one using the standard raw rby driver (gem: mongo) and MongoMapper (gem: mongo_mapper). 
 
 Knut Haugen 20100530 knuthaug+github@gmail.com
 
