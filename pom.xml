@@ -8,6 +8,30 @@
     <artifactId>mongodb-samples</artifactId>
     <version>1.0</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
     <repositories>
         <repository>
             <id>morphia.googlecode.com</id>
@@ -15,20 +39,27 @@
             <url>http://morphia.googlecode.com/svn/mavenrepo</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.mongodb</groupId>
-           <artifactId>mongo-java-driver</artifactId>
+            <artifactId>mongo-java-driver</artifactId>
             <version>1.4</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
-        <groupId>com.google.code</groupId>
-          <artifactId>morphia</artifactId>
-          <version>0.93-SNAPSHOT</version>
-      </dependency>  
+            <groupId>com.google.code</groupId>
+            <artifactId>morphia</artifactId>
+            <version>0.93-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+        </dependency>
+        
     </dependencies>
-    
+
 </project>
