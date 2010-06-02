@@ -1,5 +1,6 @@
 package no.kh.mongo.direct;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
@@ -11,6 +12,7 @@ import java.net.UnknownHostException;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class PersonPersistance {
 
@@ -33,7 +35,18 @@ public class PersonPersistance {
         persons.insert(test);
         assertNotNull(test.get("_id"));
 
+    }
 
+
+    @Test
+    public void personWithDocumentNotMatchingObject(){
+      BasicDBObject tmp = new BasicDBObject();
+      tmp.append("foo", "value");
+      persons.insert(tmp);
+
+      Person test2 = (Person) persons.findOne();
+      assertEquals(test2.get("foo"), "value");
+      assertNull(test2.get("name"));
     }
 
     @Test
