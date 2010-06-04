@@ -14,6 +14,15 @@ public class Person {
     @Embedded
     private Address address;
 
+
+  public Person() {
+        address = new Address("", "", "", "");
+    }
+
+    public Person(Address newAddress){
+        address = newAddress;
+    }
+
     public String getId() {
         return id;
     }
@@ -23,18 +32,18 @@ public class Person {
         return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-    public Person(){
-        address = new Address();
+    public void setId(String newId) {
+        id = newId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    public void setName(String newName) {
+        name = newName;
     }
 
-    public void setStreetName(String streetName) {
-        address.setStreetName(streetName);
+
+    public void setAddress(Address newAddress) {
+        address = newAddress;
     }
+
 }

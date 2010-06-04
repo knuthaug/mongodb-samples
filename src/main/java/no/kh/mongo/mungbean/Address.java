@@ -1,8 +1,5 @@
-package no.kh.mongo.morphia;
+package no.kh.mongo.mungbean;
 
-import com.google.code.morphia.annotations.Embedded;
-
-@Embedded
 public class Address {
 
   private String streetName;
@@ -20,5 +17,8 @@ public class Address {
     this.country = country;
   }
 
+  public String place(){
+    return place;
+  }
 
 }

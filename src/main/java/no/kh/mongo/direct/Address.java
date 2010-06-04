@@ -6,24 +6,26 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+public class Address implements DBObject {
 
-public class Person implements DBObject {
+  private Map map = new LinkedHashMap();
 
-    Map map;
+  public Address() {
+  }
+
+  public Address(String streetName, String postalCode, String place, String country) {
+    map.put("street", streetName);
+    map.put("postalcode", postalCode);
+    map.put("place", place);
+    map.put("country", country);
+  }
+
+  public String place(){
+    return (String)map.get("place");
+  }
 
 
-    public Person () {
-        map = new LinkedHashMap();
-    }
-
-    public Person(String fullName, Address newAddress) {
-        this();
-        put("name", fullName);
-        put("address", newAddress);
-
-    }
-
-    public Object put(String s, Object o) {
+   public Object put(String s, Object o) {
         return map.put(s, o);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -67,7 +69,4 @@ public class Person implements DBObject {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-
-
-    
 }

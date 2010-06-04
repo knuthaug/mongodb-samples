@@ -32,9 +32,9 @@ public class PersistanceThroughMorphia {
     @Test
     public void storePersonThroughMorphiaMapping () {
 
-        Person test = new Person();
+        Person test = new Person(new Address("Josefines gate", "0401", "Oslo", "Norge") );
         test.setName("Knut Haugen");
-        test.setStreetName("Josefines gate");
+
         persons.save(morph.toDBObject(test));
         Person test2 = morph.fromDBObject(Person.class, persons.findOne());
         assertNotNull(test2.getId());
@@ -45,8 +45,8 @@ public class PersistanceThroughMorphia {
     @Test
     public void personMissingField () {
 
-        Person test = new Person();
-        test.setStreetName("Josefines gate");
+        Person test = new Person(new Address("Josefines gate", "0401", "Oslo", "Norge"));
+ 
         persons.save(morph.toDBObject(test));
         Person test2 = morph.fromDBObject(Person.class, persons.findOne());
         assertNull(test2.getName());
