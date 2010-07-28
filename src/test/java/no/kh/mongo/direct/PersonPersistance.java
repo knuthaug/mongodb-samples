@@ -31,7 +31,9 @@ public class PersonPersistance {
     @Test
     public void insertPersonSavesPersonToDatabase () {
 
-        Person test = new Person("Knut Haugen", new Address("Josefines gate", "0401", "oslo", "Norge"));
+        Person test = new Person("Knut Haugen",
+                                 new Address("Josefines gate", "0401",
+                                             "oslo", "Norge"));
         persons.insert(test);
         assertNotNull(test.get("_id"));
 
@@ -51,7 +53,9 @@ public class PersonPersistance {
 
     @Test
     public void retrievePersonFromDatabase(){
-        Person test = new Person("Knut Haugen", new Address("Josefines gate", "0401", "oslo", "Norge"));
+        Person test = new Person("Knut Haugen",
+                                  new Address("Josefines gate", "0401",
+                                              "oslo", "Norge"));
         persons.insert(test);
 
         Person test2 = (Person) persons.findOne();
