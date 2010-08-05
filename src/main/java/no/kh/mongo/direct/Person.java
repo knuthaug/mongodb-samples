@@ -2,8 +2,6 @@ package no.kh.mongo.direct;
 
 import com.mongodb.BasicDBObject;
 
-import java.util.LinkedHashMap;
-
 public class Person extends BasicDBObject {
 
 
