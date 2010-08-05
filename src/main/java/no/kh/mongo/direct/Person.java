@@ -9,20 +9,19 @@ import java.util.Set;
 
 public class Person implements DBObject {
 
-    Map map;
+    Map map = new LinkedHashMap();
 
 
     public Person () {
-        map = new LinkedHashMap();
+
     }
 
     public Person(String fullName, Address newAddress) {
-        this();
         put("name", fullName);
         put("address", newAddress);
 
     }
-
+              
     public Object put(String s, Object o) {
         return map.put(s, o);  //To change body of implemented methods use File | Settings | File Templates.
     }
